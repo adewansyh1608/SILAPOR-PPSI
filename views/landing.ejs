@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SILAPOR - Universitas Andalas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: "class" };
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body
+    class="font-[Inter,sans-serif] antialiased bg-[conic-gradient(at_top_right,_var(--tw-gradient-stops))] from-[#eef2ff] via-white to-[#dcfce7] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 transition-colors duration-500 min-h-screen flex flex-col"
+  >
+    
+
+    <!-- 🏫 Hero Section -->
+    <header class="relative bg-white dark:bg-gray-900 py-20 px-6 overflow-hidden">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+    <!-- Kiri: Teks -->
+    <div class="space-y-6">
+      <p class="text-green-600 dark:text-green-400 font-medium uppercase tracking-wide">
+        Sistem Pelaporan Universitas Andalas
+      </p>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+        <span class="text-gray-900 dark:text-white">Temukan Barang Hilang,</span><br />
+        <span class="text-green-600 dark:text-green-400">Laporkan Penemuan </span>Anda
+      </h1>
+      <p class="text-gray-700 dark:text-gray-300 text-lg leading-relaxed max-w-xl">
+        Platform resmi Universitas Andalas untuk membantu mahasiswa, dosen, dan staf
+        dalam melaporkan dan menemukan barang yang hilang di lingkungan kampus.
+      </p>
+
+      <!-- Tombol -->
+      <div class="flex flex-wrap gap-4 mt-6">
+        <a
+          href="/login"
+          class="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold px-8 py-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+        >
+          Masuk Sekarang
+        </a>
+        <a
+          href="/register"
+          class="px-8 py-3 rounded-xl border-2 border-green-600 text-green-700 dark:text-green-300 hover:bg-green-50 dark:hover:bg-green-900/30 font-semibold transition"
+        >
+          Daftar Akun
+        </a>
+      </div>
+
+      <!-- Statistik -->
+      <div class="flex flex-wrap gap-8 mt-10">
+      <div>
+        <p class="text-3xl font-bold text-green-600 dark:text-green-400">
+          <%= jumlahLaporanSelesai %>+
+        </p>
+        <p class="text-gray-700 dark:text-gray-300">Laporan Selesai</p>
+      </div>
+     
+      <div>
+        <p class="text-3xl font-bold text-green-600 dark:text-green-400">
+          <%= jumlahMahasiswa %>+
+        </p>
+        <p class="text-gray-700 dark:text-gray-300">Mahasiswa Terbantu</p>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="relative contetn-center">
+      <div class="relative rounded-2xl overflow-hidden shadow-lg">
+        <img
+          src="/images/unand.jpg"
+          alt="Kegiatan Pelaporan"
+          class="w-full h-[400px] object-cover"
+        />
+        
+      </div>
+
+      <div
+        class="absolute -top-6 -right-6 bg-green-600 text-white rounded-full w-28 h-28 flex items-center justify-center font-semibold text-center leading-tight p-4 shadow-lg rotate-12"
+      >
+        Get it<br />Reported!
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    <!-- 💡 Fitur -->
+    <section class="px-6 py-16 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md">
+      <div class="max-w-7xl mx-auto text-center">
+        <h2
+          class="text-3xl font-bold text-gray-900 dark:text-white mb-8 bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
+        >
+          Mengapa Menggunakan SILAPOR?
+        </h2>
+        <div
+          class="grid grid-cols-1 md:grid-cols-3 gap-8 text-gray-700 dark:text-gray-300"
+        >
+          <div
+            class="p-6 bg-white dark:bg-gray-900 rounded-2xl shadow hover:shadow-xl transition border-2 border-green-600/20"
+          >
+            <svg
+              class="w-10 h-10 mb-4 text-green-600 dark:text-green-400 mx-auto"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M13 16h-1v-4h-1m0-4h.01M12 18.5c4.142 0 7.5-3.358 7.5-7.5S16.142 3.5 12 3.5 4.5 6.858 4.5 11s3.358 7.5 7.5 7.5z"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg mb-2">Transparan & Terpercaya</h3>
+            <p>Setiap laporan diverifikasi dan dapat dipantau oleh pengguna.</p>
+          </div>
+
+          <div
+            class="p-6 bg-white dark:bg-gray-900 rounded-2xl shadow hover:shadow-xl transition border-2 border-green-600/20"
+          >
+            <svg
+              class="w-10 h-10 mb-4 text-green-600 dark:text-green-400 mx-auto"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M5 13l4 4L19 7"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg mb-2">Mudah Digunakan</h3>
+            <p>Proses pelaporan dan penemuan barang hanya butuh beberapa klik.</p>
+          </div>
+
+          <div
+            class="p-6 bg-white dark:bg-gray-900 rounded-2xl shadow hover:shadow-xl transition border-2 border-green-600/20"
+          >
+            <svg
+              class="w-10 h-10 mb-4 text-green-600 dark:text-green-400 mx-auto"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6 0a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <h3 class="font-semibold text-lg mb-2">Cepat Tanggap</h3>
+            <p>Notifikasi otomatis membantu barang cepat ditemukan kembali.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   
+
+<section class="px-6 py-16 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2
+      class="text-3xl font-bold text-gray-900 mb-10"
+    >
+      Laporan Penemuan Barang
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <% laporanPenemuan.forEach(item => { %>
+        <div
+          class="p-6 bg-white text-start shadow-xl dark:bg-gray-900 rounded-2xl shadow hover:shadow-2xl transition-all duration-300"
+        >
+          <img
+            src="/uploads/<%= item.foto_barang %>"
+            alt="<%= item.nama_barang %>"
+            class="w-full h-48 object-cover rounded-xl mb-3"
+            onerror="this.src='/img/no-image.png'"
+          />
+          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-1">
+            <%= item.nama_barang %>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Lokasi: <%= item.lokasi %>
+          </p>
+          <p class="text-sm text-gray-500 dark:text-gray-500 mb-3">
+            Ditemukan oleh: <%= item.User?.nama || 'Anonim' %>
+          </p>
+
+          <button
+          class="detail-btn px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm transition"
+          data-nama="<%= item.nama_barang %>"
+          data-lokasi="<%= item.lokasi %>"
+          data-tanggal="<%= item.tanggal_kejadian ? item.tanggal_kejadian.toLocaleDateString('id-ID') : '-' %>"
+          data-deskripsi="<%= item.deskripsi || 'Tidak ada deskripsi' %>"
+          data-foto="/uploads/<%= item.foto_barang %>"
+        >
+          Lihat Detail
+        </button>
+
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+<section class="px-6 py-16 bg-white/70 dark:bg-gray-800/70 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto text-center">
+    <h2
+      class="text-3xl font-bold text-gray-800 mb-10"
+    >
+      Laporan Kehilangan Barang
+    </h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <% laporanKehilangan.forEach(item => { %>
+        <div
+          class="p-6 bg-white text-start shadow-xl dark:bg-gray-900 rounded-2xl shadow hover:shadow-2xl transition-all duration-300"
+        >
+          <img
+            src="/uploads/<%= item.foto_barang %>"
+            alt="<%= item.nama_barang %>"
+            class="w-full h-48 object-cover rounded-xl mb-3"
+            onerror="this.src='/img/no-image.png'"
+          />
+          <h3 class="font-semibold text-lg text-gray-900 dark:text-gray-100 mb-1">
+            <%= item.nama_barang %>
+          </h3>
+          <p class="text-sm text-gray-600 dark:text-gray-400">
+            Lokasi: <%= item.lokasi %>
+          </p>
+          <p class="text-sm text-gray-500 dark:text-gray-500 mb-3">
+            Dilaporkan oleh: <%= item.User?.nama || 'Anonim' %>
+          </p>
+
+          <button
+            class="detail-btn px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg text-sm transition"
+            data-nama="<%= item.nama_barang %>"
+            data-lokasi="<%= item.lokasi %>"
+            data-tanggal="<%= item.tanggal_kejadian ? item.tanggal_kejadian.toLocaleDateString('id-ID') : '-' %>"
+            data-deskripsi="<%= item.deskripsi || 'Tidak ada deskripsi' %>"
+            data-foto="/uploads/<%= item.foto_barang %>"
+          >
+            Lihat Detail
+          </button>
+
+        </div>
+      <% }) %>
+    </div>
+  </div>
+</section>
+
+
+<div
+  id="global-modal"
+  class="fixed inset-0 hidden z-[9999] flex items-center justify-center bg-black/50 backdrop-blur-sm"
+>
+  <div
+    class="absolute inset-0"
+    onclick="closeModal()"
+  ></div>
+
+  <div
+    id="modal-content"
+    class="relative bg-white dark:bg-gray-900 rounded-2xl shadow-xl w-11/12 md:w-1/2 max-h-[80vh] overflow-y-auto p-6 z-10"
+  >
+    <button
+      onclick="closeModal()"
+      class="absolute top-3 right-3 text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-xl"
+    >
+      ✖
+    </button>
+
+    <img
+      id="modal-image"
+      src=""
+      alt=""
+      class="w-full h-64 object-cover rounded-xl mb-4"
+    />
+    <h3 id="modal-title" class="text-2xl font-semibold text-gray-900 dark:text-white mb-2"></h3>
+    <p class="text-gray-700 dark:text-gray-300 mb-1"><strong>Lokasi:</strong> <span id="modal-lokasi"></span></p>
+    <p class="text-gray-700 dark:text-gray-300 mb-1"><strong>Tanggal:</strong> <span id="modal-tanggal"></span></p>
+    <p class="text-gray-700 dark:text-gray-300 mb-3"><strong>Deskripsi:</strong> <span id="modal-deskripsi"></span></p>
+    <button
+  onclick="window.location.href='/login'"
+  class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 rounded-lg transition"
+>
+  Masuk untuk Hubungi Penemu
+</button>
+  </div>
+</div>
+
+
+
+
+
+
+
+    <footer
+      class="py-6 bg-gray-50 dark:bg-gray-900 text-center text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700"
+    >
+      <p>
+        © 2025 SILAPOR - Universitas Andalas |
+        <span class="text-green-600 dark:text-green-400 font-semibold"
+          >Dibangun oleh Kelompok 5 PPSI</span
+        >
+      </p>
+    </footer>
+
+    <script>
+  // Fungsi buka modal
+  function openModal(nama, lokasi, tanggal, deskripsi, foto) {
+    document.getElementById("modal-title").innerText = nama;
+    document.getElementById("modal-lokasi").innerText = lokasi;
+    document.getElementById("modal-tanggal").innerText = tanggal;
+    document.getElementById("modal-deskripsi").innerText = deskripsi;
+    document.getElementById("modal-image").src = foto;
+
+    document.getElementById("global-modal").classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  }
+
+  // Fungsi tutup modal
+  function closeModal() {
+    document.getElementById("global-modal").classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  // 🧠 Tambahan: event listener buat tombol detail
+  document.querySelectorAll(".detail-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const nama = btn.dataset.nama;
+      const lokasi = btn.dataset.lokasi;
+      const tanggal = btn.dataset.tanggal;
+      const deskripsi = btn.dataset.deskripsi;
+      const foto = btn.dataset.foto;
+
+      openModal(nama, lokasi, tanggal, deskripsi, foto);
+    });
+  });
+</script>
+
+  </body>
+</html>

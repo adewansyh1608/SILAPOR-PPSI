@@ -8,8 +8,8 @@ const cookieParser = require("cookie-parser");
 const { Server } = require("socket.io");
 
 // Import Routes
-const authRoutes = require("./routes/auth");
-const mahasiswaRoutes = require("./routes/mahasiswaRoutes");
+const authRoutes = require("./routes/authRoute");
+const mahasiswaRoutes = require("./routes/mahasiswaRoute");
 const adminRoutes = require("./routes/adminRoute");
 
 class AppServer {
